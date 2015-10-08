@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<!-- 验证码 -->
+	<http name="validatecode">
+		<url>http://csujwc.its.csu.edu.cn/sys/ValidateCode.aspx</url>
+		<referer>http://csujwc.its.csu.edu.cn/_data/index_LOGIN.aspx</referer>
+	</http>
+	<!-- 登录 -->
+	<http name="login">
+		<url>http://csujwc.its.csu.edu.cn/_data/index_login.aspx</url>
+		<referer>http://csujwc.its.csu.edu.cn/_data/index_login.aspx</referer>
+		<!-- 
+			Sel_Type=STU        //学生
+			UserID=				//用户名
+			PassWord=asd		//密码
+			cCode=asd&
+			typeName=学生
+		 -->
+		 <params>
+		 	<param>UserID</param>
+		 	<param>PassWord</param>
+		 	<param>cCode</param>
+		 </params>
+	</http>
+	<!-- 获取成绩 -->
+	<http name="getGrade">
+		<url>http://csujwc.its.csu.edu.cn/xscj/Stu_MyScore_rpt.aspx</url>
+		<referer>http://csujwc.its.csu.edu.cn/xscj/Stu_MyScore_rpt.aspx</referer>
+		<!-- 
+		sel_xn=2013                       //2013-2014学年
+		sel_xq=1						//0第一学期  1第二学期
+		SJ=0							//0原始成绩  1 有效成绩
+		btn_search=%BC%EC%CB%F7
+		SelXNXQ=2						//0 入学以来  1学年  2 学期
+		txt_xm=201200001273				
+		zfx_flag=0						//0主修  1辅修
+		 -->
+		 <params>
+		 	<param>sel_xn</param>
+		 	<param>sel_xq</param>
+		 	<param>SJ</param>
+		 	<param>SelXNXQ</param>
+		 	<param>zfx_flag</param>
+		 </params>
+	</http>
+	
+	<http  name="getCourse">
+		<!-- http://csujwc.its.csu.edu.cn/znpk/Pri_StuSel_rpt.aspx -->
+		<url>http://csujwc.its.csu.edu.cn/znpk/Pri_StuSel_rpt.aspx</url>
+		<!--  http://csujwc.its.csu.edu.cn/znpk/Pri_StuSel.aspx -->
+		<referer>http://csujwc.its.csu.edu.cn/znpk/Pri_StuSel.aspx</referer>
+		<!-- 
+	
+	Sel_XNXQ=20140    2014 表示 2014-2015    0表示上半个学期  1下半个学期
+	rad=0:格式一、格式二
+	px=0
+	Submit01=%BC%EC%CB%F7
+	
+	 -->
+		<params>
+		 	<param>Sel_XNXQ</param>
+		 	<param>rad</param>
+		 	<param>Submit01</param>
+		 	<param>px</param>
+		 </params>
+	</http>
+	
+	
+</root>
